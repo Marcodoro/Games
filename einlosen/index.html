@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code einlosen</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        header {
+            background-color: black;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 50px;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        .title {
+            color: white;
+            font-weight: 800;
+            font-size: 20px;
+            font-family: poppins;
+            font-weight: 900;
+        }
+        a {
+            color: white;
+            font-weight: 800;
+            font-size: 20px;
+            font-family: poppins;
+            font-weight: 900;
+            text-decoration: none;
+        }
+        .title {
+            color: white;
+            font-weight: 800;
+            font-size: 20px;
+            font-family: poppins;
+            font-weight: 900;
+        }
+        .main {
+            width: 100vw;
+            height: 100vh;
+            border: 1px solid rgba(255, 0, 0, 0);
+            left: 0;
+            margin-top: 60px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .top_title {
+            font-size: 20px;
+            font-weight: 800;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .main 
+        {
+            height: 50vh;
+            width: 100vw;
+            position: absolute;
+            top: 50px;
+            justify-content: center;
+            border: solid red 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .text {
+            font-family: poppins;
+            font-weight: 800;
+            font-size: 20px;
+        }
+        input {
+            height: 60px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input::placeholder {
+            font-size: 20px !important;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">
+           <a href="index.html">
+            Offline-Spiele für iPads
+            </a> 
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="text">
+            Enter the code here
+        </div>
+        <input id="userInput" type="text" placeholder="Enter the code">
+        <button onclick="checkCode()">Submit</button>
+    </div>
+    
+    <script>
+        let userInput;
+    
+        function storeInput() {
+            const inputElement = document.getElementById("userInput");
+            userInput = inputElement.value;
+        }
+    
+        function encryptNumericPassword(password, secretKey) {
+            return btoa(password + secretKey);
+        }
+    
+        function decryptNumericPassword(encryptedPassword, secretKey) {
+            return atob(encryptedPassword).replace(secretKey, '');
+        }
+    
+        var secretKey = "obamawanstthatgood";
+        var password = -0x49e7*-0x3+-0x1*-0xa000+-0xf6b3;
+    
+        var encryptedPassword = encryptNumericPassword(password.toString(), secretKey);
+    
+        function checkCode() {
+            storeInput();
+            var enteredCode = parseInt(userInput);
+            var decryptedPassword = parseInt(decryptNumericPassword(encryptedPassword, secretKey));
+    
+            if (enteredCode === decryptedPassword) {
+                console.log("Code is correct. Running function...");
+                alert("Code is correct. Running function... and hackingi into your internet");
+            } else {
+                console.log("Incorrect code. Please try again.Your a incompetent piece of shit");
+                alert("Incorrect code. Please try again.Your a incompetent piece of shit");
+            }
+        }
+    </script>
+    
+    
+</body>
+</html>
