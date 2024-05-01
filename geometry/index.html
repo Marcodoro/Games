@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiele</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        header {
+            background-color: black;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 50px;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        .title {
+            color: white;
+            font-weight: 800;
+            font-size: 20px;
+            font-family: poppins;
+            font-weight: 900;
+        }
+        .main {
+            width: 100vw;
+            height: 300vh;
+            border: 1px solid rgba(255, 0, 0, 0);
+            left: 0;
+            margin-top: 60px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+        .top_title {
+            font-size: 20px;
+            font-weight: 800;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a {
+            color: white;
+            font-weight: 800;
+            font-size: 20px;
+            font-family: poppins;
+            font-weight: 900;
+            text-decoration: none;
+        }
+        .text {
+            font-size: 17px;
+            font-family: poppins;
+        }
+        .top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            gap: 50px;
+        }
+        .geometry {
+            width: 300px;
+            height: 300px;
+            border: rgba(0, 0, 0, 0) 3px solid;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .game_title {
+            font-size: 15px;
+            font-weight: 600;
+            position: absolute;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .img {
+            height: 100%;
+            width: 100%;
+        }
+        .toggle {
+            display: flex;
+            flex-direction: column; 
+            gap: 20px;
+        }
+        button {
+            border: none;
+            border-radius: 10px;
+            height: 50px;
+            width: 180px;
+            font-family: poppins;
+            font-weight: 800;
+        }
+        .exo {
+            gap: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+        .demons {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+        .classic {
+            gap: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/index.html">
+            Spiele fürs Ipad 
+        </a> 
+    </header>
+    <div class="main">
+        <div class="top">
+            <div class="top_title">
+                Geometry Dash 
+            </div>
+           <div class="text">
+            Versionen:
+           </div>
+           <div class="toggle">
+             <button onclick="showClassic()">Classic</button>
+             <button onclick="showExo()">exotische Versionen</button>
+             <button onclick="showExtreme()">Extreme Demons</button>
+             <button onclick="showDemo()">Demo Versionen</button>
+           </div>
+           <div class="demo">
+               <div class="geometry">
+                <a href="./geometry">
+                    <img src="/DEMO.png" class="img">
+                </a>
+            </div>
+           </div>
+        <div class="classic">
+
+            <div class="geometry">
+                <a href="./geometry">
+                    <img src="/LEVEL1_3.png" class="img">
+                </a>
+            </div>
+            <br><br>
+            <div class="geometry">
+                <a href="./geometry">
+                    <img src="/LEVEL4_6.png" class="img">
+                </a>
+            </div>
+            <br><br>
+            <div class="geometry">
+                <a href="./geometry">
+                    <img src="/LEVEL7_8.png" class="img">
+                </a>
+            </div>        
+            <br><br>
+            <div class="geometry">
+                <a href="./geometry">
+                    <img src="/LEVEL9_13.png" class="img">
+                </a>
+            </div>        
+            <br><br>
+            <div class="geometry">
+                <a href="./geometry">
+                    <img src="/LEVEL14_15.png" class="img">
+                </a>
+            </div>
+            <br><br>
+            <div class="geometry">
+                <a href="./geometry">
+                    <img src="/LEVEL16_21.png" class="img">
+                </a>
+            </div>
+        </div>
+
+        <div class="exo">
+            <div class="geometry">
+                <a href="./geometry">
+                    <img src="/TF.png" class="img">
+                </a>
+            </div>
+            <br><br>
+            <div class="geometry">
+                <a href="./geometry">
+                    <img src="/MD.png" class="img">
+                </a>
+            </div>
+            <br><br>
+            <div class="geometry">
+                <a href="./geometry">
+                    <img src="/SB.png" class="img">
+                </a>
+            </div>
+        </div>
+
+        <div class="demons">
+            <div class="geometry">
+                <a href="./geometry">
+                    <img src="/DF.png" class="img">
+                </a>
+            </div>
+            <br>
+            <br>
+            <div class="geometry">
+                <a href="./geometry">
+                    <img src="/p.png" class="img">
+                </a>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    <script>
+        const classicElement = document.querySelector('.classic');
+        const ExoElement = document.querySelector('.exo');
+        const DemonsElement = document.querySelector('.demons');
+        const DemoElement = document.querySelector('.demo');
+        let clickedClassic = false;
+        let clickedExo = false;
+        let ClickedDemons = false;
+        let ClickedDemo = false;
+
+        if (ClickedDemo == false) {
+            DemoElement.style.display = 'none';
+        }
+
+        if (ClickedDemons === false)
+        {
+            DemonsElement.style.display = 'none';
+        }
+
+        if (clickedExo === false)
+        {
+            ExoElement.style.display = 'none';
+        }
+    
+        if (clickedClassic === false) {
+            classicElement.style.display = "none";
+        }
+    
+        function showClassic() {
+            classicElement.style.display = 'block';
+            classicElement.style.gap = '50px';
+            clickedExo = false;
+            ClickedDemons = false;
+            let ClickedDemo = false;
+            DemonsElement.style.display='none';
+            ExoElement.style.display = 'none';
+            DemoElement.style.display = 'none';
+        }
+
+        function showExo() {
+            ExoElement.style.display = 'block';
+            clickedClassic = false;
+            let ClickedDemo = false;
+            ClickedDemons = false;
+            DemonsElement.style.display = 'none';
+            classicElement.style.display = "none";
+            DemoElement.style.display = 'none';
+        }
+
+        function showExtreme() {
+            DemonsElement.style.display = "block";
+            let ClickedDemo = false;
+            clickedClassic = false;
+            clickedExotic = false;
+            classicElement.style.display = "none";
+            ExoElement.style.display = 'none';
+            DemoElement.style.display = 'none';
+        }
+
+        function showDemo() {
+            DemoElement.style.display = 'block';
+            clickedClassic = false;
+            clickedExotic = false;
+            ClickedDemons = false;
+            classicElement.style.display = "none";
+            ExoElement.style.display = 'none';
+            DemonsElement.style.display='none';
+
+        }
+    </script>
+    
+</body>
+</html>
